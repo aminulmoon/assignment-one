@@ -18,13 +18,15 @@ mobile_dict = mobile_data.get('data')
 rate = mobile_data.get('exchange_rate')
 
 for mobile in mobile_dict:
-
+    # access the variables from the dictionary of list.
     mobile_name = mobile.get('name')
     price = mobile.get('price')
     usd = float(price.strip(' USD'))
+        # [The USD price was in string formate with extra letters. First delete the extra letters and keep only digits. Then convert to float. So we can multiply USD with Exchange Rate.]
     bdt = round(usd * rate)
     country = mobile.get('made')
 
+    # 5 variations of template.
     template_text =[
         f'The price of {mobile_name} is {usd} USD or {bdt} BDT in Bangladesh. It is one of the popular phone which is made in {country}.',
 
