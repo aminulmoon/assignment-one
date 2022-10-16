@@ -38,9 +38,13 @@ post_data = [
 
 # Your Code Start from here
 
-
+for post_title in post_data:
+    title = post_title.get('title')
+    stripped_title = title.strip()
+    url = stripped_title.replace(' ','-')
+    post_title.update({"slug": url})
 
 
 # Your code ends here
 
-print(post_data[4])
+print(post_data[1])
