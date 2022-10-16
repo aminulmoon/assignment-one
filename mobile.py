@@ -18,12 +18,11 @@ mobile_dict = mobile_data.get('data')
 rate = mobile_data.get('exchange_rate')
 
 for mobile in mobile_dict:
-    # access the variables from the dictionary of list.
+    # access the variables from the dictionary of lists.
     mobile_name = mobile.get('name')
     price = mobile.get('price')
-    usd = float(price.strip(' USD'))
-        # [The USD price was in string formate with extra letters. First delete the extra letters and keep only digits. Then convert to float. So we can multiply USD with Exchange Rate.]
-    bdt = round(usd * rate)
+    usd = float(price.strip(' USD'))    # [The USD price was in string format with extra letters. First, delete the extra letters and keep only digits. Then convert digits to float (there are some decimal numbers). Now, we can multiply USD with Exchange Rate.]
+    bdt = round(usd * rate)             # Make BDT in round figure
     country = mobile.get('made')
 
     # 5 variations of template.
