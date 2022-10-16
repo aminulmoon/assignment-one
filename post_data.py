@@ -39,10 +39,10 @@ post_data = [
 # Your Code Start from here
 
 for post_title in post_data:
-    title = post_title.get('title')
-    stripped_title = title.strip()
-    url = stripped_title.replace(' ','-')
-    post_title.update({"slug": url})
+    title = post_title.get('title')          # Access Title from the list of dictionaries.
+    stripped_title = title.strip()           # Remove before and after Space from title.
+    url = stripped_title.replace(' ','-')    # Convert title into URL.
+    post_title.update({"slug": url})         # Add Slug/URL in every post.
 
 
 # Your code ends here
